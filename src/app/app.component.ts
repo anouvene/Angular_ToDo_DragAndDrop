@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {ListModel} from '@app/shared/models';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,38 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todoDragAndDrop';
+  public title = 'To-Do List';
+
+  // List
+  public listlabel = '';
+  public lists: ListModel[] = [];
+
+  // Item
+  public itemContent = '';
+
+  /**
+   * Add a list
+   */
+  public addList() {
+    if (this.listlabel) {
+      this.lists.push({
+        label: this.listlabel,
+        items: []
+      });
+    }
+    this.listlabel = '';
+  }
+
+  /**
+   * Add item to a list
+   * @param list List of items
+   */
+  public addItem(list: ListModel) {
+    if (this.itemContent) {
+      list.items.push({
+        content: this.itemContent
+      });
+    }
+    this.itemContent = '';
+  }
 }

@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  padding:0;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+li {
+  padding: 1em;
+  &:nth-child(2n) {
+    background-color: #C5CAE9;
+  }
+}
+
+.container { padding: 0 15px }
+.mat-card { margin-top: 15px; margin-bottom: 15px; background-color: #E8EAF6}
